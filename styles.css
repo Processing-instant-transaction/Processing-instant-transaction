@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue; /* Light blue background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Stack images and text vertically */
+    align-items: center;
+}
+
+.images-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Space between images and loading message */
+}
+
+.passport-image {
+    width: 40px; /* Adjust the width as needed */
+    height: auto;
+    margin-right: 10px; /* Space between passport and logo */
+}
+
+.logo-image {
+    width: 60px; /* Adjust the width as needed */
+    height: auto;
+}
+
+.loading-message {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    background-color: red; /* Red background */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Adjust padding to control height */
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    height: 50px; /* Adjust this height to your taste */
+    overflow: hidden;
+}
+
+.loading-message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, green);
+    animation: moveLine 2s linear infinite;
+}
+
+@keyframes moveLine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#message {
+    font-size: 1.2rem;
+    color: black; /* Black text color */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.blinking-text {
+    animation: blinking 1s infinite;
+}
+
+@keyframes blinking {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
